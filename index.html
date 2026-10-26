@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JagatSaji - Katalog Menu</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Internal (Digabungkan Langsung di HTML) -->
+    <style>
+        /* Tetapan Asas & Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Reka Bentuk Header / Navbar */
+        header {
+            background-color: #0b0b0b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            color: #ffffff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #e59847;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+            color: #d97706;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-order {
+            background-color: #e59847;
+            color: #ffffff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-order:hover {
+            background-color: #d28131;
+        }
+
+        /* Bekas Utama (Container) */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Bahagian Hero / Pengenalan */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 38px;
+            color: #d9822b;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 13px;
+            color: #555555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .btn-hero {
+            background-color: #e59847;
+            color: #ffffff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(229, 152, 71, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .btn-hero:hover {
+            background-color: #d28131;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+        }
+
+        /* Garisan Pemisah */
+        .divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+
+        /* Bahagian Pilihan Menu */
+        .menu-section {
+            text-align: center;
+        }
+
+        .menu-title {
+            font-size: 32px;
+            color: #d9822b;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: #fcecd7;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card h3 {
+            font-size: 18px;
+            color: #111111;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .menu-card p {
+            font-size: 12px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        /* Footer Styling */
+        .site-footer {
+            background-color: #121212;
+            color: #ffffff;
+            padding: 50px 20px 20px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .footer-col {
+            flex: 1;
+        }
+
+        .footer-col h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .footer-col p {
+            font-size: 13px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+            color: #ffffff;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: #888888;
+        }
+
+        /* Responsif untuk Peranti Mudah Alih */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .footer-center {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">JagatSaji</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Rekanan</a></li>
+                <li><a href="#">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <button class="btn-order">Pesan Disini</button>
+        </div>
+    </header>
+
+    <!-- Kandungan Utama / Main Content -->
+    <main class="container">
+        
+        <!-- Bahagian Hero (Pengenalan) -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Sajian Masakan<br>Indonesia</h1>
+                <p>
+                    Nikmati kelezatan resep warisan leluhur yang diolah dari bumbu rempah pilihan. 
+                    Dari Sabang sampai Merauke, kami menghadirkan kehangatan tradisi Indonesia 
+                    langsung ke meja makan Anda. Jelajah Rasa Kuliner Nusantara dengan keaslian 
+                    rempah, kesegaran bahan, dan kehangatan tradisi dalam setiap sajian. 
+                    Pesan sekarang dan nikmati kelezatan masakan khas Indonesia!
+                </p>
+                <button class="btn-hero">pesan sekarang</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" alt="Sajian Masakan Indonesia">
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Bahagian Pilihan Menu -->
+        <section class="menu-section">
+            <h2 class="menu-title">Pilihan Menu</h2>
+
+            <div class="menu-grid">
+                <!-- Kad Menu 1: Nasi Kuning -->
+                <div class="menu-card">
+                    <img src="nasi kuning.jpg" alt="Nasi Kuning">
+                    <h3>Nasi Kuning</h3>
+                    <p>Memiliki cita rasa yang gurih dengan warna kuning cerah, membuat hidangan ini disukai.</p>
+                </div>
+
+                <!-- Kad Menu 2: Gado-gado -->
+                <div class="menu-card">
+                    <img src="gado gado.jpg" alt="Gado-gado">
+                    <h3>Gado-gado</h3>
+                    <p>Salah satu makanan khas Indonesia yang terdiri dari aneka sayuran yang disiram dengan bumbu kacang yang gurih.</p>
+                </div>
+
+                <!-- Kad Menu 3: Nasi Uduk -->
+                <div class="menu-card">
+                    <img src="nasi uduk.jpg" alt="Nasi Uduk">
+                    <h3>Nasi Uduk</h3>
+                    <p>Nasi Uduk adalah salah satu hidangan khas Betawi (Jakarta) yang terbuat dari beras yang dimasak dengan santan serta bumbu.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- Kolom 1: Contact Us -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Location in skaneda</p>
+                <p>https://wa.me/+6285739727017</p>
+                <p>JagatSaji@gmail.com</p>
+            </div>
+
+            <!-- Kolom 2: JagatSaji & Social Media -->
+            <div class="footer-col footer-center">
+                <h3>JagatSaji</h3>
+                <p>Kuliner SMK Negeri 2 Mojokerto</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Kolom 3: Opening Hours -->
+            <div class="footer-col">
+                <h3>Opening Hours</h3>
+                <p>Everyday 10.00 Am - 18.00 Pm</p>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 All Rights Reserved By Ach.Vallency R.s xrpl1_skaneda</p>
+        </div>
+    </footer>
+
+</body>
+</html>
